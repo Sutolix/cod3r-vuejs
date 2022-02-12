@@ -1,0 +1,21 @@
+<meta charset="utf-8" />
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+  <ul>
+    <li v-for="color in colors" :teste="color">{{ color }}</li>
+  </ul>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      colors: ['vermelho', 'verde', 'amarelo', 'azul'],
+      people: [
+        {name: 'Ana', age: 26, weight: 59},
+        {name: 'Guilherme', age: 22, weight: 89},
+      ]
+    }
+  })
+</script>
