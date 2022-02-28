@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Matador de Monstro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="panel scores">
+            <div class="score">
+                <h1>Jogador</h1>
+                <div class="life-bar">
+                    <div class="life" :class="{danger: playerInDanger}" :style="{width: playerLife + '%'}"></div>
+                </div>
+                <div>{{ playerLife + '%' }}</div>
+            </div>
+            <div class="score">
+                <h1>Monstro</h1>
+                <div class="life-bar">
+                    <div class="life" :class="{danger: monsterInDanger}" :style="{width: monsterLife + '%'}"></div>
+                </div>
+                <div>{{ monsterLife + '%' }}</div>
+            </div>
+        </div>
+        <div v-if="showResult" class="panel result">
+            <div class="win" v-if="monsterLoss">Você ganhou!!! :)</div>
+            <div class="lose" v-if="playerLoss">Você perdeu! :(</div>
+        </div>
+        <div class="panel buttons">
+            <template v-if="isPlaying">
+                <button @click="attack" class="btn attack">Ataque</button>
+                <button @click="specialAtack" class="btn especial-attack">Ataque Especial</button>
+                <button @click="heal" class="btn heal">Curar</button>
+                <button @click="resetGame" class="btn give-up">Desistir</button>
+            </template>
+            <button @click="startGame" v-show="!isPlaying" class="btn new-game">Iniciar Jogo</button>
+        </div>
+        <div v-if="showLogs" class="panel logs">
+            <ul>
+                <li v-for="(log, index) in logs" :index="index">
+                    <div class="monster">{{ log.monster }}</div>
+                    <div class="player">{{ log.player }}</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
