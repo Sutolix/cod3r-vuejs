@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    {{ name }} {{ lastName }} {{ 12 * 6 }} {{ Math.pow(2,3) }}
+  </div>
+  
+  <script>
+    function MyVue(params) {
+      this.$el = document.querySelector(params.el)
+      this.$data = params.data
+
+      for(let atr in this.$data) {
+        Object.defineProperty(this, atr, {
+          get: () => {
+            return this.$data[atr]
+          },
+          set: value => {
+            this.$data[atr] = value
+          }
+        })
+      }
+
+      // interpolação
+      const regex = /\{\{([\s\w)(,./+*-]*)\}\}/g
+      this.$el.innerHTML = this.$el.innerHTML.replace(regex, (match, $1) => {
+        const value = this[$1.trim()]
+        return value ? value : eval($1)
+      })
+
+    }
+
+    const vm = new MyVue({
+      el: '#app',
+      data: {
+        name: 'Jhon',
+        lastName: 'Smith'
+      }
+    })
+    console.log(vm.name)
+    console.log(vm.$data.name)
+    
+    vm.name = 'Joseph'
+    console.log(vm.name)
+    console.log(vm.$data.name)
+
+  </script>
+</body>
+</html>
