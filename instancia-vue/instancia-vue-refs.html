@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    <h1 ref="lessonRef">{{ lesson }}</h1>
+    <h2>{{ module }}</h2>
+    <button @click="changeLesson">Alterar Aula</button>
+    <button @click="changeModule">Alterar Módulo</button>
+  </div>
+  
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        lesson: 'Aula: Usando Refs',
+        module: 'Módulo: Instância Vue',
+      },
+      methods: {
+        changeLesson(){
+          this.lesson += '#'
+          console.log(this.$refs.lessonRef)
+        },
+        changeModule(){
+          this.module += '#'
+        },
+      }
+    })
+  </script>
+</body>
+</html>
