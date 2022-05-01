@@ -11,7 +11,7 @@ import MenuToolbar from "./MenuToolbar.vue";
 import MenuItens from "./MenuItens.vue";
 
 export default {
-  name: "app-sidebar",
+  name: "appSidebar",
   components: {
     MenuToolbar,
     MenuItens,

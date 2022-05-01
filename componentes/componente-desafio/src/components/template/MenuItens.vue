@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "menu-itens",
+  name: "menuItens",
   data() {
     return {
       itensMenu: [

@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "menu-toolbar",
+  name: "menuToolbar",
 };
 </script>
 

@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "photos-carousel",
+  name: "photosCarousel",
   data() {
     return {
       fotos: [
