@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Contadores</h1>
-    <span>{{ counter }}</span>
+    <app-counter />
   </div>
 </template>
 
