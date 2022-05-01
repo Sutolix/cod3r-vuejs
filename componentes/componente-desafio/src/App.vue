@@ -10,10 +10,11 @@
 </template>
 
 <script>
-import Sidebar from "./Sidebar.vue";
-import Toolbar from "./Toolbar.vue";
-import Carousel from "./Carousel.vue";
-import Footer from "./Footer.vue";
+// @/ faz referencia a pasta src/
+import Sidebar from "@/components/template/Sidebar.vue";
+import Toolbar from "@/components/template/Toolbar.vue";
+import Carousel from "@/components/widgets/Carousel.vue";
+import Footer from "@/components/template/Footer.vue";
 
 export default {
   name: "App",
