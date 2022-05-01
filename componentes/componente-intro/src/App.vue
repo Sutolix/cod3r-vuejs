@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <app-counters />
+    <button>?</button>
   </div>
 </template>
 
