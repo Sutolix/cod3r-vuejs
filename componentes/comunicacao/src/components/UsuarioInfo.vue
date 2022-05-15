@@ -40,7 +40,7 @@ export default {
     },
   },
   created() {
-    barramento.$on("ageChange", (age) => {
+    barramento.onAgeChange((age) => {
       this.age = age;
     });
   },

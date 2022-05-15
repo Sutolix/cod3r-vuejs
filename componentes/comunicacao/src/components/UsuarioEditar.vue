@@ -19,7 +19,7 @@ export default {
   methods: {
     changeAge() {
         this.age += 1
-        barramento.$emit('ageChange', this.age)
+        barramento.changeAge(this.age)
     },
   },
 };
